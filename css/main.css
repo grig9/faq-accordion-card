@@ -1,14 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: no-repeat linear-gradient(hsl(273deg, 75%, 66%), 70%, hsl(240deg, 73%, 65%));
+  position: relative;
+}
+
+.card {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 80px;
+  padding: 100px 25px 25px 25px;
+  background-color: white;
+  border-radius: 30px;
+}
+.card img {
+  display: block;
+  position: absolute;
+  width: 240px;
+  top: -110px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.card .questions {
+  margin-top: 30px;
+}
+.card .questions h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.card .questions .question {
+  position: relative;
+}
+.card .questions .question .toggle {
+  display: none;
+}
+.card .questions .question .title {
+  color: hsl(240deg, 6%, 50%);
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: block;
+}
+.card .questions .question .title:hover {
+  color: hsl(14deg, 88%, 65%);
+  cursor: pointer;
+}
+.card .questions .question .title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 7px;
+  height: 7px;
+  width: 10px;
+  background: no-repeat url("../images/icon-arrow-down.svg");
+}
+.card .questions .question .answer {
+  visibility: hidden;
+  height: 40px;
+  width: 95%;
+  overflow: hidden;
+  background-color: white;
+}
+.card .questions .question .answer p {
+  padding: 0;
+  padding: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(240deg, 6%, 50%);
+}
+.card .questions .toggle:checked + .title {
+  color: hsl(238deg, 29%, 16%);
+  font-weight: 700;
+}
+.card .questions .toggle:checked + .title::after {
+  transform: rotate(180deg);
+}
+.card .questions .toggle:checked + .title + .answer {
+  visibility: visible;
+  height: 80px;
+}
+.card .questions .toggle:checked + .title + .answer + p {
+  width: 100%;
+}
+.card .questions .toggle:checked + .title:before {
+  transform: rotate(90deg) !important;
 }
 
 .attribution {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  padding: 20px;
+  color: white;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+  color: white;
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .questions {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    align-items: center;
+  }
+  .card {
+    width: 900px;
+    display: flex;
+    padding-top: 25px;
+    padding-left: 0;
+    margin: 0;
+  }
+  .card h1 {
+    display: inline-block;
+    text-align: start;
+  }
+  .card img {
+    display: none;
+  }
+  .card .image {
+    width: 50%;
+    background: no-repeat url("../images/illustration-woman-online-desktop.svg");
+    background-size: 400px;
+    background-position: right 100px top 40px;
+  }
+  .card .image::after {
+    content: "";
+    width: 191px;
+    height: 184px;
+    left: -95px;
+    top: 160px;
+    position: absolute;
+    z-index: 200;
+    background: no-repeat url("../images/illustration-box-desktop.svg");
+  }
+  .questions {
+    width: 50%;
+  }
+  .questions .question {
+    width: 80%;
+  }
 }/*# sourceMappingURL=main.css.map */

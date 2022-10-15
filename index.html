@@ -11,24 +11,83 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <link rel="stylesheet" href="css/main.css" />
     <title>Frontend Mentor | FAQ Accordion Card</title>
   </head>
   <body>
     <main>
       <div class="card">
-        <h1>FAQ</h1>
-        How many team members can I invite? You can invite up to 2 additional
-        users on the Free plan. There is no limit on team members for the
-        Premium plan. What is the maximum file upload size? No more than 2GB.
-        All files in your account must fit your allotted storage space. How do I
-        reset my password? Click “Forgot password” from the login page or
-        “Change password” from your profile page. A reset link will be emailed
-        to you. Can I cancel my subscription? Yes! Send us a message and we’ll
-        process your request no questions asked. Do you provide additional
-        support? Chat and email support is available 24/7. Phone lines are open
-        during normal business hours.
+        <div class="image">
+          <img
+            src="/images/illustration-woman-online-mobile.svg"
+            alt="illustration-woman-online"
+          />
+        </div>
+
+        <div class="questions">
+          <h1>FAQ</h1>
+          <div class="question">
+            <input type="checkbox" id="toggle1" class="toggle" />
+            <label class="title" for="toggle1"
+              >How many team members can I invite?</label
+            >
+            <div class="answer">
+              <p>
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </div>
+          </div>
+
+          <div class="question">
+            <input type="checkbox" id="toggle2" class="toggle" />
+            <label class="title" for="toggle2"
+              >What is the maximum file upload size?</label
+            >
+            <div class="answer">
+              <p>
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <input type="checkbox" id="toggle3" class="toggle" />
+            <label class="title" for="toggle3"
+              >How do I reset my password?</label
+            >
+            <div class="answer">
+              <p>
+                Click “Forgot password” from the login page or “Change password”
+                from your profile page. A reset link will be emailed to you.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <input type="checkbox" id="toggle4" class="toggle" />
+            <label class="title" for="toggle4"
+              >Can I cancel my subscription?</label
+            >
+            <div class="answer">
+              <p>
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <input type="checkbox" id="toggle5" class="toggle" />
+            <label class="title" for="toggle5"
+              >Do you provide additional support?</label
+            >
+            <div class="answer">
+              <p>
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 

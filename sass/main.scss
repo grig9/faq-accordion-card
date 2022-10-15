@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 // Text
 
-$Very-dark-desaturated-blue: hsl(238, 29%, 16%);
-$Soft-red: hsl(14, 88%, 65%);
+$very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
 
 // Background gradient:
 
@@ -16,6 +18,7 @@ $dark-grayish-blue: hsl(240, 6%, 50%);
 // #### Dividers
 
 $light-grayish-blue: hsl(240, 5%, 91%);
+$white: white;
 
 // ## Typography
 
@@ -34,8 +37,188 @@ $font-size: 12px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: $font-size;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: no-repeat  linear-gradient($soft-violet, 70%, $soft-blue);
+  position: relative;
+}
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.card {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 80px;
+  padding: 100px 25px 25px 25px;
+  background-color: $white;
+  border-radius: 30px;
+
+  img {
+    display: block;
+    position: absolute;
+    width: 240px;
+    top: -110px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .questions {
+    margin-top: 30px;
+
+    h1 {
+      font-size: 3.0rem;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .question {
+      position: relative;
+
+      .toggle {
+        display: none;
+      }
+  
+      .title {
+        color: $dark-grayish-blue;
+        font-weight: 400;
+        font-size: 1.2rem;
+        display: block;
+  
+        &:hover {
+          color: $soft-red;
+          cursor: pointer;
+        }
+  
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 7px;
+          height: 7px;
+          width: 10px;
+          background: no-repeat url('../images/icon-arrow-down.svg');
+        }
+      }
+
+      .answer {
+        visibility: hidden;
+        height: 40px;
+        width: 95%;
+        overflow: hidden;
+        background-color: $white;
+        p {
+          padding: 0;
+          padding: 10px 0;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: $dark-grayish-blue;;
+        }
+      }
+    }
+
+    
+
+    .toggle:checked {
+      & + .title {
+        color: $very-dark-desaturated-blue;
+        font-weight: 700;
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+      & + .title + .answer {
+        visibility: visible;
+        height: 80px;
+      }
+
+      & + .title + .answer + p {
+        width: 100%;
+      }
+
+      & + .title:before {
+        transform: rotate(90deg) !important;
+      }
+    }
+  }
+}
+
+.attribution { 
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  padding: 20px;
+  color: $white;
+  font-size: 11px; text-align: center; 
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+  color: $white;
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .questions {
+   width: 80%;
+   margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  body {
+    align-items: center;
+  }
+
+  .card {
+    width: 900px;
+    display: flex;
+    padding-top: 25px;
+    padding-left: 0;
+    margin: 0;
+
+    h1 {
+      display: inline-block;
+      text-align: start;
+    }
+
+    img {
+      display: none;
+    }
+
+    .image {
+      width: 50%;
+      background: no-repeat url('../images/illustration-woman-online-desktop.svg');
+      background-size: 400px;
+      background-position: right 100px top 40px;
+
+      &::after {
+        content: '';
+        width: 191px;
+        height: 184px;
+        left: -95px;
+        top: 160px;
+        position: absolute;
+        z-index: 200;
+        background: no-repeat  url('../images/illustration-box-desktop.svg');
+      }
+    }
+
+  }
+
+  .questions {
+    width: 50%;
+
+    .question  {
+      width: 80%;
+    }
+  }
+}
