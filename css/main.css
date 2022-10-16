@@ -27,13 +27,23 @@ body {
   background-color: white;
   border-radius: 30px;
 }
-.card img {
+.card .image img {
   display: block;
   position: absolute;
   width: 240px;
   top: -110px;
   left: 50%;
   transform: translate(-50%);
+}
+.card .image::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 104px;
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%);
+  background: no-repeat url("../images/bg-pattern-mobile.svg");
 }
 .card .questions {
   margin-top: 30px;
@@ -46,6 +56,8 @@ body {
 }
 .card .questions .question {
   position: relative;
+  border-bottom: 1px solid hsl(240deg, 6%, 50%);
+  margin-bottom: 15px;
 }
 .card .questions .question .toggle {
   display: none;
@@ -63,7 +75,7 @@ body {
 .card .questions .question .title::after {
   content: "";
   position: absolute;
-  right: 0;
+  right: 2px;
   top: 7px;
   height: 7px;
   width: 10px;
@@ -71,7 +83,7 @@ body {
 }
 .card .questions .question .answer {
   visibility: hidden;
-  height: 40px;
+  height: 15px;
   width: 95%;
   overflow: hidden;
   background-color: white;
@@ -92,7 +104,7 @@ body {
 }
 .card .questions .toggle:checked + .title + .answer {
   visibility: visible;
-  height: 80px;
+  height: auto;
 }
 .card .questions .toggle:checked + .title + .answer + p {
   width: 100%;
@@ -129,38 +141,42 @@ body {
   }
   .card {
     width: 900px;
+    min-height: 500px;
     display: flex;
-    padding-top: 25px;
-    padding-left: 0;
+    padding: 0;
     margin: 0;
   }
   .card h1 {
+    margin-top: 30px;
     display: inline-block;
-    text-align: start;
-  }
-  .card img {
-    display: none;
   }
   .card .image {
     width: 50%;
-    background: no-repeat url("../images/illustration-woman-online-desktop.svg");
-    background-size: 400px;
-    background-position: right 100px top 40px;
+    background: url("../images/illustration-woman-online-desktop.svg"), url("../images/bg-pattern-desktop.svg");
+    background-size: 472px, 966px;
+    background-repeat: no-repeat;
+    background-position: right 55px top 65px, right 55px top -300px;
+  }
+  .card .image img {
+    display: none;
   }
   .card .image::after {
     content: "";
     width: 191px;
     height: 184px;
-    left: -95px;
-    top: 160px;
+    left: 0px;
+    top: 200px;
     position: absolute;
     z-index: 200;
     background: no-repeat url("../images/illustration-box-desktop.svg");
   }
-  .questions {
+  .card .questions {
     width: 50%;
   }
-  .questions .question {
+  .card .questions .question {
     width: 80%;
+  }
+  .card .questions .question .title::after {
+    right: 12px;
   }
 }/*# sourceMappingURL=main.css.map */
