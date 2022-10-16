@@ -57,7 +57,7 @@ body {
   margin: 0 auto;
   margin-top: 200px;
   margin-bottom: 80px;
-  padding: 100px 25px 25px 25px;
+  padding: 100px 20px 20px 20px;
   background-color: $white;
   border-radius: 30px;
 
@@ -96,7 +96,6 @@ body {
     }
 
     .question {
-      position: relative;
       border-bottom: 1px solid $dark-grayish-blue;
       margin-bottom: 15px;
 
@@ -105,6 +104,8 @@ body {
       }
   
       .title {
+        width: 95%;
+        position: relative;
         color: $dark-grayish-blue;
         font-weight: 400;
         font-size: 1.2rem;
@@ -118,7 +119,7 @@ body {
         &::after {
           content: '';
           position: absolute;
-          right: 2px;
+          right: -15px;
           top: 7px;
           height: 7px;
           width: 10px;
@@ -238,10 +239,9 @@ body {
   
       .question  {
         width: 80%;
-  
         .title {
           &::after {
-            right: 12px;
+            right: -5px;
           }
         }
       }
